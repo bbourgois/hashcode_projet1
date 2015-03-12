@@ -40,12 +40,20 @@ public class TestServeurService {
         ser.add(serveur);
         ser.add(serveur1);
 
+
+        Serveur serveur2 = new Serveur(3, 2, 1);
+        Serveur serveur3 = new Serveur(1, 5, 2);
+        ser.add(serveur2);
+        ser.add(serveur3);
+
         //exercise
         List<Groupe> res = serveurService.createGroupes(2, ser);
 
         // verify
         Assert.assertEquals(2, res.size());
-        Assert.assertEquals(1, res.get(0).getServeurs().size());
+        Assert.assertEquals(2, res.get(0).getServeurs().size());
+
+
 
     }
 }
