@@ -14,6 +14,12 @@ public class Serveur {
     public Serveur() {
     }
 
+    public Serveur(int taille, int capacite, int indice) {
+        this.taille = taille;
+        this.capacite = capacite;
+        this.indice = indice;
+    }
+
     public int getTaille() {
         return taille;
     }
@@ -44,5 +50,9 @@ public class Serveur {
 
     public void setGroupe(int groupe) {
         this.groupe = groupe;
+    }
+
+    public double getDensite (){
+        return (double)this.capacite / this.taille;
     }
 }
