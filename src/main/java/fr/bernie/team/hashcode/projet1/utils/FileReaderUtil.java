@@ -2,6 +2,7 @@ package fr.bernie.team.hashcode.projet1.utils;
 
 import fr.bernie.team.hashcode.projet1.Coordonnee;
 import fr.bernie.team.hashcode.projet1.Data;
+import fr.bernie.team.hashcode.projet1.Serveur;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,7 +32,7 @@ public class FileReaderUtil {
 
         int nbrangee=0, nbcoorperline=0,indispcoor=0,nbgroup=0,nbservers=0;
         List<Coordonnee> indispoList = new ArrayList<Coordonnee>();
-        List<Coordonnee> serverList = new ArrayList<Coordonnee>();
+        List<Serveur> serverList = new ArrayList<Serveur>();
 
         try {
 
@@ -69,7 +70,7 @@ public class FileReaderUtil {
                 }
                 else{
                     String[] coorOk = sCurrentLine.split(" ");
-                    serverList.add(new Coordonnee(Integer.parseInt(coorOk[0]), Integer.parseInt(coorOk[1])));
+                    serverList.add(new Serveur(Integer.parseInt(coorOk[0]), Integer.parseInt(coorOk[1])));
                     lineread++;
                 }
             }

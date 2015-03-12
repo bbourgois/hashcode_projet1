@@ -1,6 +1,7 @@
 package fr.bernie.team.hashcode.projet1.utils;
 
 import fr.bernie.team.hashcode.projet1.Coordonnee;
+import fr.bernie.team.hashcode.projet1.Serveur;
 
 import java.util.List;
 
@@ -11,9 +12,9 @@ public class FileStructure {
 
     private int nbrangee=0, nbcoorperline=0,indispcoor=0,nbgroup=0,nbservers=0;
     private List<Coordonnee> coordonneeListIndisp;
-    private List<Coordonnee> coordonneeList;
+    private List<Serveur> coordonneeList;
 
-    public FileStructure(int nbrangee, int nbcoorperline, int indispcoor, int nbgroup, int nbservers, List<Coordonnee> coordonneeListIndisp, List<Coordonnee> coordonneeList) {
+    public FileStructure(int nbrangee, int nbcoorperline, int indispcoor, int nbgroup, int nbservers, List<Coordonnee> coordonneeListIndisp, List<Serveur> coordonneeList) {
         this.nbrangee = nbrangee;
         this.nbcoorperline = nbcoorperline;
         this.indispcoor = indispcoor;
@@ -34,11 +35,11 @@ public class FileStructure {
         this.coordonneeListIndisp = coordonneeListIndisp;
     }
 
-    public List<Coordonnee> getCoordonneeList() {
+    public List<Serveur> getCoordonneeList() {
         return coordonneeList;
     }
 
-    public void setCoordonneeList(List<Coordonnee> coordonneeList) {
+    public void setCoordonneeList(List<Serveur> coordonneeList) {
         this.coordonneeList = coordonneeList;
     }
 

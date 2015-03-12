@@ -14,6 +14,11 @@ public class Serveur {
     public Serveur() {
     }
 
+    public Serveur(int taille, int capacite) {
+        this.taille = taille;
+        this.capacite = capacite;
+    }
+
     public Serveur(int taille, int capacite, int indice) {
         this.taille = taille;
         this.capacite = capacite;

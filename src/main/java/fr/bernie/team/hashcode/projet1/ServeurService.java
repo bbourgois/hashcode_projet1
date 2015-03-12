@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class ServeurService {
 
-    List<Serveur> sortServeurByDensite(List<Serveur> serveurs){
+    public List<Serveur> sortServeurByDensite(List<Serveur> serveurs){
         List<Serveur> res  = new ArrayList<Serveur>(serveurs);
         Collections.sort(res, new Comparator<Serveur>() {
             @Override
