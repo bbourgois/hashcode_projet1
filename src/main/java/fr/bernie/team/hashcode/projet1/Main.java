@@ -73,7 +73,7 @@ public class Main {
             for(int j=0;j<ligne.getSize();j++){
                 for(Coordonnee coordonnee : fileStructure.getCoordonneeListIndisp()){
                     if(coordonnee.getRangee() == i && coordonnee.getEmplacement()==j){
-                        ligne.addContent(j,"indisp");
+                        ligne.addContent(j, Ligne.State.INDISP);
                     }
                 }
             }

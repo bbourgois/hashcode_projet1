@@ -9,32 +9,51 @@ import java.util.List;
 public class Ligne {
 
     private int size;
-    private String[] content;
+    private State[] content;
+
+    public enum State {
+        EMPTY,
+        INDISP,
+        FULL
+    }
+
+    private State state;
 
     public Ligne(int size) {
         this.size = size;
-        content = new String[size];
+        content = new State[size];
         for(int i=0;i<size;i++){
-            content[i] = "e";
+            content[i] = State.EMPTY ;
         }
     }
 
-    public void addContent(int index,String content){
+    public void addContent(int index,State content){
         if(this.getContent()[index] !=null){
             this.getContent()[index] = content;
         }
     }
 
-    public void removeContent(int index,String content){
+    public void removeContent(int index,State content){
         if(this.getContent()[index] !=null){
-            this.getContent()[index] = "e";
+            this.getContent()[index] = State.EMPTY;
         }
     }
 
-    public String[] getContent() {
+    public State getState() {
+        return state;
+    }
+
+    public void setState(State state) {
+        this.state = state;
+    }
+
+    public State[] getContent() {
         return content;
     }
 
+    public void setContent(State[] content) {
+        this.content = content;
+    }
 
     @Override
     public String toString() {
@@ -44,9 +63,6 @@ public class Ligne {
                 '}';
     }
 
-    public void setContent(String[] content) {
-        this.content = content;
-    }
 
     public int getSize() {
         return size;
