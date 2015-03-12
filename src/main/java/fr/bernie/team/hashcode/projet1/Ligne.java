@@ -71,4 +71,42 @@ public class Ligne {
     public void setSize(int size) {
         this.size = size;
     }
+
+    int testAddServeur(Serveur ser){
+        int emplacement = -1;
+
+        int taille = ser.getTaille();
+        int temp = taille;
+        int emplacementTest = 0;
+        int pos = 0;
+        for (State s : content) {
+            pos++;
+            if (State.EMPTY.equals(s)) {
+                temp --;
+
+            }else{
+                temp = taille;
+                emplacementTest = pos;
+            }
+            if (temp == 0){
+                emplacement = emplacementTest;
+
+                break;
+            }
+        }
+
+        return emplacement;
+
+    }
+
+    int addServeur(Serveur ser){
+        int pos = testAddServeur(ser);
+        if (pos >= 0){
+            // reservation
+            for (int i = pos; i <(pos + ser.getTaille()) ;pos ++  ){
+                content[i] = State.FULL;
+            }
+        }
+        return pos;
+    }
 }
