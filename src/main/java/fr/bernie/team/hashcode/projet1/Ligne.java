@@ -103,7 +103,7 @@ public class Ligne {
         int pos = testAddServeur(ser);
         if (pos >= 0){
             // reservation
-            for (int i = pos; i <(pos + ser.getTaille()) ;pos ++  ){
+            for (int i = pos; i <(pos + ser.getTaille()) ;i ++  ){
                 content[i] = State.FULL;
             }
         }

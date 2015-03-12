@@ -80,9 +80,42 @@ public class Main {
             ligneList.add(ligne);
         }
 
+        int grpInd = 0;
+        int ligne = 0;
+        int nbLigneTest = 0;
+        for(Groupe grp : groupeList){
+            grpInd ++;
+            log.warn("groupe " + grpInd);
+
+
+            for (Serveur serv : grp.getServeurs()) {
+                nbLigneTest++;
+                int test = ligneList.get(ligne).addServeur(serv);
+                if (test >= 0) {
+                    nbLigneTest = 0;
+                    ligne++;
+                    if (ligne < data.getNbRangee()) {
+                        ligne = 0;
+                    }
+                    continue;
+                } else {
+                    ligne++;
+                    if (ligne >= data.getNbRangee()) {
+                        ligne = 0;
+                    }
+                    if (nbLigneTest > data.getNbRangee()) {
+                        log.warn("perdu ");
+                        break;
+                    }
+                }
+            }
+        }
+
         log.warn("Lignessssss : "+ligneList);
-
-
+        log.warn("Lignessssss size: "+ligneList.size());
+        for(Ligne lig : ligneList){
+            log.warn("Ligne: "+lig);
+        }
 
 
     }
