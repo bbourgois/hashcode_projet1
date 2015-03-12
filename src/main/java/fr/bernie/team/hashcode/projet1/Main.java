@@ -66,6 +66,14 @@ public class Main {
 
         log.warn(groupeList.toString());
 
+        List<Ligne> ligneList = new ArrayList<Ligne>();
+
+        for(int i=0;i<fileStructure.getNbrangee();i++){
+            ligneList.add(new Ligne(fileStructure.getNbcoorperline()));
+        }
+
+        log.warn("Lignes : "+ligneList);
+
 
 
     }
