@@ -89,20 +89,19 @@ public class Main {
 
 
             for (Serveur serv : grp.getServeurs()) {
+                if (ligne >= data.getNbRangee()) {
+                    ligne = 0;
+                }
                 nbLigneTest++;
                 int test = ligneList.get(ligne).addServeur(serv);
                 if (test >= 0) {
                     nbLigneTest = 0;
                     ligne++;
-                    if (ligne < data.getNbRangee()) {
-                        ligne = 0;
-                    }
+
                     continue;
                 } else {
                     ligne++;
-                    if (ligne >= data.getNbRangee()) {
-                        ligne = 0;
-                    }
+
                     if (nbLigneTest > data.getNbRangee()) {
                         log.warn("perdu ");
                         break;
