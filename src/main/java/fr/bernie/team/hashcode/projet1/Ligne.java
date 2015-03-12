@@ -14,11 +14,27 @@ public class Ligne {
     public Ligne(int size) {
         this.size = size;
         content = new String[size];
+        for(int i=0;i<size;i++){
+            content[i] = "e";
+        }
+    }
+
+    public void addContent(int index,String content){
+        if(this.getContent()[index] !=null){
+            this.getContent()[index] = content;
+        }
+    }
+
+    public void removeContent(int index,String content){
+        if(this.getContent()[index] !=null){
+            this.getContent()[index] = "e";
+        }
     }
 
     public String[] getContent() {
         return content;
     }
+
 
     @Override
     public String toString() {

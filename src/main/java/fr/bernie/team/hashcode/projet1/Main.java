@@ -69,10 +69,19 @@ public class Main {
         List<Ligne> ligneList = new ArrayList<Ligne>();
 
         for(int i=0;i<fileStructure.getNbrangee();i++){
-            ligneList.add(new Ligne(fileStructure.getNbcoorperline()));
+            Ligne ligne = new Ligne(fileStructure.getNbcoorperline());
+            for(int j=0;j<ligne.getSize();j++){
+                for(Coordonnee coordonnee : fileStructure.getCoordonneeListIndisp()){
+                    if(coordonnee.getRangee() == i && coordonnee.getEmplacement()==j){
+                        ligne.addContent(j,"indisp");
+                    }
+                }
+            }
+            ligneList.add(ligne);
         }
 
-        log.warn("Lignes : "+ligneList);
+        log.warn("Lignessssss : "+ligneList);
+
 
 
 
