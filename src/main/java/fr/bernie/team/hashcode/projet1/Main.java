@@ -2,6 +2,7 @@ package fr.bernie.team.hashcode.projet1;
 
 import fr.bernie.team.hashcode.projet1.utils.FileReaderUtil;
 import fr.bernie.team.hashcode.projet1.utils.FileStructure;
+import fr.bernie.team.hashcode.projet1.utils.Groupe;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,18 +17,8 @@ public class Main {
     private static final Logger log = LoggerFactory.getLogger(Data.class);
 
 
-    public ServeurService serveurService;
-
-    public ServeurService getServeurService() {
-        return serveurService;
-    }
-
-    public void setServeurService(ServeurService serveurService) {
-        this.serveurService = serveurService;
-    }
-
-    public void main(String[] args) {
-        this.setServeurService(new ServeurService());
+    public static void main(String[] args) {
+        ServeurService serveurService = new ServeurService();
 
         log.info("test Data");
         FileReaderUtil fileReaderUtil = new FileReaderUtil("C:\\Users\\Rémy\\Desktop\\entryFile.txt");
@@ -68,6 +59,12 @@ public class Main {
         //data setserveurs ?
 
         List<Serveur> sortedServer = serveurService.sortServeurByDensite(serveurList);
+
+        log.warn(sortedServer.toString());
+
+        List<Groupe> groupeList = serveurService.createGroupes(fileStructure.getNbgroup(),sortedServer);
+
+        log.warn(groupeList.toString());
 
 
 

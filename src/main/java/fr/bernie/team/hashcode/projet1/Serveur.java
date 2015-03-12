@@ -14,6 +14,17 @@ public class Serveur {
     public Serveur() {
     }
 
+
+    @Override
+    public String toString() {
+        return "Serveur{" +
+                "taille=" + taille +
+                ", capacite=" + capacite +
+                ", indice=" + indice +
+                ", groupe=" + groupe +
+                '}';
+    }
+
     public Serveur(int taille, int capacite) {
         this.taille = taille;
         this.capacite = capacite;

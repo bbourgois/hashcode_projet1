@@ -15,6 +15,13 @@ public class Groupe {
     public Groupe() {
     }
 
+    @Override
+    public String toString() {
+        return "Groupe{" +
+                "serveurs=" + serveurs +
+                '}';
+    }
+
     public void addServeur(Serveur ser){
         serveurs.add(ser);
     }
