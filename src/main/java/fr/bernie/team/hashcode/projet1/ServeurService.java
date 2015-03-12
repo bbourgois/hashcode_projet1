@@ -12,7 +12,9 @@ import java.util.List;
  */
 public class ServeurService {
 
-    public List<Serveur> sortServeurByDensite(List<Serveur> serveurs){
+
+
+    List<Serveur> sortServeurByDensite(List<Serveur> serveurs){
         List<Serveur> res  = new ArrayList<Serveur>(serveurs);
         Collections.sort(res, new Comparator<Serveur>() {
             @Override
@@ -31,11 +33,25 @@ public class ServeurService {
         }
 
         int temp = 0;
+        boolean up = true;
         for(Serveur serv :serveurs){
-                Groupe grp = grps.get(temp);
-                grp.addServeur(serv);
+            Groupe grp = grps.get(temp);
+            grp.addServeur(serv);
+            if (up){
                 temp ++;
-                temp =  (temp  % nbGroupe);
+            }else{
+                temp --;
+            }
+
+            if (temp == nbGroupe){
+                up = false;
+                temp --;
+            }
+            if (temp < 0){
+                up = true;
+                temp = 0;
+            }
+
         }
         return  grps;
 
