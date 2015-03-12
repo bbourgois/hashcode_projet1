@@ -42,5 +42,13 @@ public class Main {
         }
         log.warn("Okay :"+coorOk);
 
+
+        Data data = new Data();
+        data.setNbRangee(fileStructure.getNbrangee());
+        data.setNbEmplacement(fileStructure.getNbcoorperline());
+        data.setIndisponibles(fileStructure.getCoordonneeListIndisp());
+
+        //data setserveurs ?
+
     }
 }
