@@ -21,7 +21,7 @@ public class Main {
         ServeurService serveurService = new ServeurService();
 
         log.info("test Data");
-        FileReaderUtil fileReaderUtil = new FileReaderUtil("C:\\Users\\Rémy\\Desktop\\entryFile.txt");
+        FileReaderUtil fileReaderUtil = new FileReaderUtil("entryFile.txt");
         FileStructure fileStructure = fileReaderUtil.readFile();
         log.warn("Structure : " +
                 "nb ranges " + fileStructure.getNbrangee()+
