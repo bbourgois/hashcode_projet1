@@ -11,6 +11,11 @@ public class Coordonnee {
     public Coordonnee() {
     }
 
+    public Coordonnee(int rangee, int emplacement) {
+        this.rangee = rangee;
+        this.emplacement = emplacement;
+    }
+
     public int getEmplacement() {
         return emplacement;
     }
