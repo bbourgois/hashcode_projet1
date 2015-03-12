@@ -1,5 +1,6 @@
 package fr.bernie.team.hashcode.projet1;
 
+import fr.bernie.team.hashcode.projet1.utils.Groupe;
 import junit.framework.Assert;
 import org.junit.Test;
 
@@ -27,6 +28,24 @@ public class TestServeurService {
 
         // verify
         Assert.assertEquals(2, res.get(0).getIndice());
+
+    }
+
+    @Test
+    public void testcreateGroupes() throws Exception{
+        // init
+        List<Serveur> ser = new ArrayList<Serveur>();
+        Serveur serveur = new Serveur(3, 2, 1);
+        Serveur serveur1 = new Serveur(1, 5, 2);
+        ser.add(serveur);
+        ser.add(serveur1);
+
+        //exercise
+        List<Groupe> res = serveurService.createGroupes(2, ser);
+
+        // verify
+        Assert.assertEquals(2, res.size());
+        Assert.assertEquals(1, res.get(0).getServeurs().size());
 
     }
 }

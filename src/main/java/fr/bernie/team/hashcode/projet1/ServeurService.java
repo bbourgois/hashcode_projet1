@@ -1,5 +1,7 @@
 package fr.bernie.team.hashcode.projet1;
 
+import fr.bernie.team.hashcode.projet1.utils.Groupe;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -22,4 +24,24 @@ public class ServeurService {
         });
         return res;
     }
+
+    List<Groupe> createGroupes(int nbGroupe, List<Serveur> serveurs){
+
+        List<Groupe> grps = new ArrayList<Groupe>(nbGroupe);
+        for (int i=0;  i < nbGroupe; i ++){
+            grps.add(new Groupe());
+        }
+
+        int temp = 0;
+        for(Serveur serv :serveurs){
+                Groupe grp = grps.get(temp);
+                grp.addServeur(serv);
+                temp ++;
+                temp =  (temp  % nbGroupe);
+        }
+        return  grps;
+
+    }
+
+
 }
